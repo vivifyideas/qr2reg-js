@@ -1,69 +1,71 @@
 function QR2REGClient({ applicationId }) {
-  const API_BASE_URL = 'https://stage.qr2reg-api.vivifyideas.com'
+  const API_BASE_URL = 'https://stage.qr2reg-api.vivifyideas.com';
 
   const TYPE = {
     DENIED: 'type:denied',
     GRANTED: 'type:granted',
     TIMED_OUT: 'type:timed_out',
-    ERROR: 'type:error'
-  }
+    ERROR: 'type:error',
+  };
 
-  this.applicationId = applicationId
-  this.onGrantedCallbacks = []
-  this.onDeniedCallbacks = []
-  this.onTimedOutCallbacks = []
-  this.onErrorCallbacks = []
+  this.applicationId = applicationId;
+  this.onGrantedCallbacks = [];
+  this.onDeniedCallbacks = [];
+  this.onTimedOutCallbacks = [];
+  this.onErrorCallbacks = [];
 
   this.signIn = () => {
     window.open(
       `${API_BASE_URL}/api/oauth?application_id=${this.applicationId}`,
       '_blank',
       'location=yes,left=0,top=0,height=375,width=375,status=yes'
-    )
-  }
+    );
+  };
 
-  this.onGranted = (onGrantedCallback) => {
-    this.onGrantedCallbacks.push(onGrantedCallback)
-  }
+  this.onGranted = onGrantedCallback => {
+    this.onGrantedCallbacks.push(onGrantedCallback);
+  };
 
-  this.onDenied = (onDeniedCallback) => {
-    this.onDeniedCallbacks.push(onDeniedCallback)
-  }
+  this.onDenied = onDeniedCallback => {
+    this.onDeniedCallbacks.push(onDeniedCallback);
+  };
 
-  this.onTimedOut = (onTimedOutCallback) => {
-    this.onTimedOutCallbacks.push(onTimedOutCallback)
-  }
+  this.onTimedOut = onTimedOutCallback => {
+    this.onTimedOutCallbacks.push(onTimedOutCallback);
+  };
 
-  this.onError = (onErrorCallback) => {
-    this.onErrorCallbacks.push(onErrorCallback)
-  }
+  this.onError = onErrorCallback => {
+    this.onErrorCallbacks.push(onErrorCallback);
+  };
 
-  this.receiveMessage = (event) => {
+  this.receiveMessage = event => {
     if (event.origin !== API_BASE_URL) {
-      return
+      return;
     }
 
     switch (event.data.type) {
       case TYPE.GRANTED:
-        this.onGrantedCallbacks.forEach(callback => callback(event.data.authorization_code))
-        break
+        this.onGrantedCallbacks.forEach(callback =>
+          callback(event.data.authorization_code)
+        );
+        break;
 
       case TYPE.DENIED:
-        this.onDeniedCallbacks.forEach(callback => callback())
-        break
+        this.onDeniedCallbacks.forEach(callback => callback());
+        break;
 
       case TYPE.TIMED_OUT:
-        this.onTimedOutCallbacks.forEach(callback => callback())
-        break
+        this.onTimedOutCallbacks.forEach(callback => callback());
+        break;
 
       case TYPE.ERROR:
-        this.onErrorCallbacks.forEach(callback => callback(event.data.error))
-        break
+        this.onErrorCallbacks.forEach(callback => callback(event.data.error));
+        break;
 
       default:
-        break
+        break;
     }
-  }
+  };
 
-  window.addEventListener('message', this.receiveMessage, false)
+  window.addEventListener('message', this.receiveMessage, false);
 }
