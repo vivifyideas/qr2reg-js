@@ -1,1 +1,1 @@
-module.exports = require('./lib/QR2REGClient');
+module.exports = require('./src/index');

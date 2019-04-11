@@ -1,4 +1,4 @@
-module.exports = function QR2REGClient({ applicationId }) {
+export default function QR2REGClient({ applicationId }) {
   const API_BASE_URL = 'https://stage.qr2reg-api.vivifyideas.com';
 
   const TYPE = {
@@ -68,4 +68,4 @@ module.exports = function QR2REGClient({ applicationId }) {
   };
 
   window.addEventListener('message', this.receiveMessage, false);
-};
+}
