@@ -3,9 +3,8 @@
     [
       "@babel/preset-env",
       {
-        "useBuiltIns": "entry"
+        "targets": "> 0.25% or last 2 versions"
       }
     ]
-  ],
-  "plugins": ["babel-plugin-transform-es2015-modules-umd"]
+  ]
 }

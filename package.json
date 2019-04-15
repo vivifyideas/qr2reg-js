@@ -7,7 +7,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "babel src/index.js --out-file dist/index.js"
+    "build": "yarn umd && yarn transpile && yarn clean",
+    "umd": "rollup src/index.js --file dist/umd.js --format umd --name QR2REGClient",
+    "transpile": "babel dist/umd.js --out-file dist/index.js",
+    "clean": "rimraf dist/umd.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,7 @@
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
-    "babel-plugin-transform-es2015-modules-umd": "^6.24.1"
+    "rimraf": "^2.6.3",
+    "rollup": "^1.10.0"
   }
 }
