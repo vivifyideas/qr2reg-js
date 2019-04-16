@@ -2,13 +2,13 @@
   "name": "qr2reg-js",
   "version": "0.0.8",
   "description": "QR2REG JavaScript library",
-  "main": "./index.js",
+  "main": "./dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "yarn umd && yarn transpile && yarn clean",
-    "umd": "rollup src/index.js --file dist/umd.js --format umd --name QR2REGClient",
+    "umd": "rollup lib/index.js --file dist/umd.js --format umd --name QR2REGClient",
     "transpile": "babel dist/umd.js --out-file dist/index.js",
     "clean": "rimraf dist/umd.js"
   },
