@@ -7,10 +7,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "yarn umd && yarn transpile && yarn clean",
-    "umd": "rollup lib/index.js --file dist/umd.js --format umd --name QR2REGClient",
-    "transpile": "babel dist/umd.js --out-file dist/index.js",
-    "clean": "rimraf dist/umd.js"
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -27,6 +24,12 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "rimraf": "^2.6.3",
-    "rollup": "^1.10.0"
+    "rollup": "^1.11.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-uglify": "^6.0.3",
+    "sweetalert": "^2.1.2"
   }
 }
