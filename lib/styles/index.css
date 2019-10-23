@@ -2,20 +2,10 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.swal-title {
-  background-color: '#126dff';
-}
-
 .swal-modal {
   background-color: #edf1f6;
   border-radius: 16px;
   animation: none !important;
-}
-
-.swal-button {
-  border: 2px solid rgba(123, 137, 155, 0.4);
-  box-sizing: border-box;
-  border-radius: 8px;
 }
 
 .swal-button {
