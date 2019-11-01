@@ -1,24 +1,76 @@
-.swal-overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
 .swal-modal {
-  background-color: #edf1f6;
-  border-radius: 16px;
-  animation: none !important;
+  background-color: #edf1f6 !important;
+  max-width: 620px !important;
+  width: 100% !important;
 }
-
+.swal-title {
+  background: #126dff !important;
+  box-shadow: inset 0px -0.5px 0px rgba(0, 0, 0, 0.1),
+    inset 0px 0.5px 0px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 16px 16px 0px 0px !important;
+  margin-bottom: 40px !important;
+}
+.swal-title:first-child {
+  margin-top: 0 !important;
+}
+.swal-button-container {
+  flex: 0 0 48% !important;
+  margin: 0 !important;
+}
 .swal-button {
-  border: 2px solid rgba(123, 137, 155, 0.4);
-  box-sizing: border-box;
-  border-radius: 8px;
+  width: 100% !important;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+}
+.swal-button--cancel {
+  color: #141414;
 }
 
+.swal-footer {
+  display: flex !important;
+  justify-content: space-between !important;
+  margin-top: 0 !important;
+  padding: 35px 15px 25px 15px !important;
+}
+.swal-text {
+  font-size: 24px !important;
+  line-height: 29px !important;
+  text-align: center !important;
+  letter-spacing: -0.41px !important;
+  color: #141414 !important;
+}
+.swal-button--confirm:not([disabled]):hover {
+  background-color: #21c763 !important;
+}
+.swal-button:focus {
+  box-shadow: none;
+}
 .swal-button--confirm {
-  background-color: #21c763;
-  border-radius: 8px;
+  border: 0px solid transparent !important;
 }
-
-.swal-overlay--show-modal {
-  animation: none !important;
+.swal-overlay {
+  padding: 20px !important;
+}
+@media (max-width: 700px) {
+  .swal-text {
+    font-size: 16px !important;
+    line-height: 18px !important;
+  }
+  .swal-footer {
+    padding: 15px 10px 20px 10px !important;
+  }
+  .swal-button {
+    font-size: 16px !important;
+    line-height: 18px !important;
+    font-weight: 500 !important;
+  }
+  .swal-title {
+    margin-bottom: 18px !important;
+  }
 }
