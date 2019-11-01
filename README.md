@@ -1,3 +1,3 @@
-# QR2REG.js
+# regzen.js
 
-QR2REG JavaScript library
+Regzen JavaScript library

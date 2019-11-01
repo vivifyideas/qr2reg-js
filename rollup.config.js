@@ -7,9 +7,9 @@ import { uglify } from 'rollup-plugin-uglify';
 export default {
   input: 'lib/index.js',
   output: {
-    file: 'dist/index.js',
+    file: 'dist/regzen.min.js',
     format: 'umd',
-    name: 'QR2REGClient',
+    name: 'RegzenClient',
   },
   plugins: [
     babel({
