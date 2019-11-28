@@ -2,11 +2,7 @@
   "name": "qr2reg-js",
   "version": "0.0.19",
   "description": "Regzen JavaScript library",
-  "main": "./lib/index.js",
-  "files": [
-    "lib",
-    "dist"
-  ],
+  "main": "./dist/index.js",
   "scripts": {
     "build": "rollup -c"
   },
