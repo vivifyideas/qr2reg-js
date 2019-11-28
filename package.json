@@ -4,6 +4,7 @@
   "description": "Regzen JavaScript library",
   "main": "./lib/index.js",
   "files": [
+    "lib",
     "dist"
   ],
   "scripts": {
