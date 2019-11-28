@@ -3,6 +3,9 @@
   "version": "0.0.20",
   "description": "Regzen JavaScript library",
   "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c"
   },
