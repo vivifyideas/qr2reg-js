@@ -2,7 +2,7 @@
   "name": "qr2reg-js",
   "version": "0.0.17",
   "description": "Regzen JavaScript library",
-  "main": "./dist/index.js",
+  "main": "./lib/index.js",
   "files": [
     "dist"
   ],
