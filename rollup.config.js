@@ -4,22 +4,34 @@ import commonjs from 'rollup-plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import { uglify } from 'rollup-plugin-uglify';
 
-export default {
-  input: 'lib/index.js',
-  output: {
-    file: 'dist/regzen.min.js',
-    format: 'umd',
-    name: 'RegzenClient',
+const plugins = [
+  babel({
+    exclude: 'node_modules/**',
+  }),
+  postcss({
+    extensions: ['.css'],
+  }),
+  resolve(),
+  commonjs(),
+];
+
+export default [
+  {
+    input: 'lib/index.js',
+    output: {
+      file: 'dist/regzen.min.js',
+      format: 'umd',
+      name: 'RegzenClient',
+    },
+    plugins: [...plugins, uglify()],
   },
-  plugins: [
-    babel({
-      exclude: 'node_modules/**',
-    }),
-    postcss({
-      extensions: ['.css'],
-    }),
-    resolve(),
-    commonjs(),
-    uglify(),
-  ],
-};
+  {
+    input: 'lib/index.js',
+    output: {
+      file: 'dist/index.js',
+      format: 'umd',
+      name: 'RegzenClient',
+    },
+    plugins,
+  },
+];
