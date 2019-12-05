@@ -33,6 +33,7 @@
 }
 
 .swal-modal {
+  font-family: 'Ubuntu', sans-serif;
   background-color: #edf1f6 !important;
   border-top-left-radius: 16px !important;
   border-top-right-radius: 16px !important;
