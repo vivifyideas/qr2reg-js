@@ -1,6 +1,6 @@
 {
   "name": "qr2reg-js",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "Regzen JavaScript library",
   "main": "./dist/index.js",
   "files": [
