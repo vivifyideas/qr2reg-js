@@ -1,17 +1,21 @@
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
+import image from 'rollup-plugin-img';
+import copy from 'rollup-plugin-copy';
 import commonjs from 'rollup-plugin-commonjs';
-import postcss from 'rollup-plugin-postcss';
 import { uglify } from 'rollup-plugin-uglify';
 
 const plugins = [
   babel({
     exclude: 'node_modules/**',
   }),
-  postcss({
-    extensions: ['.css'],
-  }),
   resolve(),
+  image(),
+  copy({
+    targets: [
+      { src: 'lib/styles/*', dest: 'dist' },
+    ]
+  }),
   commonjs(),
 ];
 
